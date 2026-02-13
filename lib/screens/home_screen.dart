@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
         ),
         child: Center(
           child: Container(
-            width: 600,
+            width: 320,
             padding: const EdgeInsets.symmetric(vertical: 60, horizontal: 40),
 
             // BLUE PANEL
@@ -53,6 +53,7 @@ class HomeScreen extends StatelessWidget {
                     color: Colors.white,
                     fontSize: 48,
                     fontWeight: FontWeight.bold,
+                    fontFamily: 'Impact',
                     letterSpacing: 2,
                   ),
                 ),
@@ -87,6 +88,16 @@ class HomeScreen extends StatelessWidget {
           textStyle: const TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 16,
+            fontFamily: 'LilitaOne',
+          ),
+        ).copyWith(
+          backgroundColor: WidgetStateProperty.resolveWith<Color?>(
+                (Set<WidgetState> states) {
+              if (states.contains(WidgetState.hovered)) {
+                return const Color(0xFFC1FF72);
+              }
+              return Colors.white;
+            },
           ),
         ),
         onPressed: () {
